@@ -30,10 +30,10 @@ function App() {
     setLoading(true);
     setError('');
     setSelectedUniversity(null);
-    setCurrentPage(1); // Reset to first page on new search
+    setCurrentPage(1); 
 
     try {
-      let url = 'http://universities.hipolabs.com/search?';
+      let url = 'https://universities.hipolabs.com/search?';
       
       if (searchTerm) {
         url += `name=${encodeURIComponent(searchTerm)}`;

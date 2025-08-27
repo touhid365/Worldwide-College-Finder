@@ -33,16 +33,10 @@ function App() {
     setCurrentPage(1); 
 
     try {
-      let url = 'https://universities.hipolabs.com/search?country=India
-';
-      
-      if (searchTerm) {
-        url += `name=${encodeURIComponent(searchTerm)}`;
-      }
-      
-      if (country) {
-        url += `${searchTerm ? '&' : ''}country=${encodeURIComponent(country)}`;
-      }
+     let url = `https://cors-anywhere.herokuapp.com/https://universities.hipolabs.com/search?`;
+     if (searchTerm) url += `name=${encodeURIComponent(searchTerm)}`;
+     if (country) url += `${searchTerm ? '&' : ''}country=${encodeURIComponent(country)}`;
+
 
       const response = await axios.get(url);
       const universitiesData = response.data.map(uni => ({
